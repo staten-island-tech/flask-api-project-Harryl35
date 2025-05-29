@@ -2,15 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Digimon API</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digimon Gallery</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>All Digimons</h1>
-    <ul>
-        {% for digimon in digimons %}
-            <li><a href="{{ url_for('digimon', name=digimon.name) }}">{{ digimon.name }}</a></li>
-        {% endfor %}
-    </ul>
-    <a href="{{ url_for('search') }}">Search for a Digimon</a>
+    <header>
+        <h1>Digimon Gallery</h1>
+        <input type="text" id="searchInput" placeholder="Search for a Digimon...">
+    </header>
+    <main>
+        <div id="digimonContainer" class="digimon-container"></div>
+        <div id="digimonDetail" class="digimon-detail">
+            <button id="closeDetail">Close</button>
+            <h2 id="digimonName"></h2>
+            <img id="digimonImage" src="" alt="">
+            <p id="digimonLevel"></p>
+            <p id="digimonDescription"></p>
+        </div>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
