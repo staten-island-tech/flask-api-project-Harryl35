@@ -2,25 +2,61 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digimon Gallery</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .digimon-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .digimon-box {
+            width: 150px;
+            height: 150px;
+            background-color: #fff;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .digimon-box:hover {
+            transform: scale(1.05);
+        }
+        .digimon-box img {
+            width: 100px;
+            height: 100px;
+            margin-top: 10px;
+        }
+        .digimon-box p {
+            margin: 10px 0;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Digimon Gallery</h1>
-        <input type="text" id="searchInput" placeholder="Search for a Digimon...">
-    </header>
-    <main>
-        <div id="digimonContainer" class="digimon-container"></div>
-        <div id="digimonDetail" class="digimon-detail">
-            <button id="closeDetail">Close</button>
-            <h2 id="digimonName"></h2>
-            <img id="digimonImage" src="" alt="">
-            <p id="digimonLevel"></p>
-            <p id="digimonDescription"></p>
-        </div>
-    </main>
-    <script src="script.js"></script>
+    <h1>Digimon Gallery</h1>
+    <div class="digimon-container">
+        {% for digimon in digimons %}
+            <div class="digimon-box">
+                <a href="{{ url_for('digimon', name=digimon.name) }}">
+                    <img src="{{ digimon.img }}" alt="{{ digimon.name }}">
+                    <p>{{ digimon.name }}</p>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
 </body>
 </html>
