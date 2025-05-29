@@ -13,7 +13,7 @@ def index():
     if search_query:
         digimons = [digimon for digimon in digimons if search_query in digimon['name'].lower()]
 
-    return render_template('index.html', digimons=digimons)
+    return render_template('search.html', digimons=digimons)
 
 @app.route('/digimon/<name>')
 def digimon(name):
