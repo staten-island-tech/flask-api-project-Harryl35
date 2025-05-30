@@ -8,8 +8,9 @@
 <body>
     <h1>Search for a Digimon</h1>
 
-    <input type="text" id="searchBox" placeholder="Enter Digimon name..." onkeyup="searchDigimon()">
-    
+    <input type="text" id="searchBox" placeholder="Enter Digimon name...">
+    <button onclick="searchDigimon()">Search</button>
+
     <div id="digimonResult"></div>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
