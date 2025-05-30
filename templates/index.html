@@ -2,16 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Digimon Explorer</title>
+    <title>Digimon List</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <h1>Digimon Explorer</h1>
-    
-    <!-- Search Bar -->
-    <input type="text" id="searchBox" placeholder="Search Digimon by name or level..." onkeyup="searchDigimon()">
-    
-    <div class="container" id="digimonContainer">
+
+    <div class="container">
         {% for digimon in digimon_list %}
         <div class="box" onclick="fetchStats('{{ digimon.name }}')">
             <img src="{{ digimon.img }}" alt="{{ digimon.name }}">
@@ -19,9 +16,9 @@
         </div>
         {% endfor %}
     </div>
-    
+
     <div id="digimonStats"></div>
-    
+
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
