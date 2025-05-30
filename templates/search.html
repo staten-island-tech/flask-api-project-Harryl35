@@ -6,12 +6,22 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Search for a Digimon</h1>
+    <h1>Search Digimon by Level</h1>
 
-    <input type="text" id="searchBox" placeholder="Enter Digimon name...">
+    <input type="text" id="searchBox" placeholder="Enter Digimon level...">
     <button onclick="searchDigimon()">Search</button>
 
-    <div id="digimonResult"></div>
+    <div id="digimonResult">
+        <h2>All Digimon</h2>
+        <div id="digimonList">
+            {% for digimon in digimon_list %}
+            <div class="box" onclick="fetchStats('{{ digimon.name }}')">
+                <img src="{{ digimon.img }}" alt="{{ digimon.name }}">
+                <p>{{ digimon.name }} - Level: {{ digimon.level }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
