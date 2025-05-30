@@ -2,72 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <title>Digimon Gallery</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 0;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        .digimon-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px;
-        }
-        .digimon-box {
-            width: 150px;
-            height: 150px;
-            background-color: #fff;
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-        .digimon-box:hover {
-            transform: scale(1.05);
-        }
-        .digimon-box img {
-            width: 100px;
-            height: 100px;
-            margin-top: 10px;
-        }
-        .digimon-box p {
-            margin: 10px 0;
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
-    <h1>Digimon Gallery</h1>
-    <div class="digimon-container">
-        {% for digimon in digimons %}
-            <div class="digimon-box">
-                <a href="{{ url_for('digimon', name=digimon.name) }}">
-                    <img src="{{ digimon.img }}" alt="{{ digimon.name }}">
-                    <p>{{ digimon.name }}</p>
-                </a>
-            </div>
-=======
     <title>Digimon List</title>
-=======
-    <title>Digimon Explorer</title>
->>>>>>> parent of 3cb05c0 (A)
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <header>
-        <h1>Digimon Explorer</h1>
+        <h1>Digimon List</h1>
     </header>
 
     <div class="grid-container">
@@ -76,7 +16,6 @@
             <img src="{{ digimon.img }}" alt="{{ digimon.name }}">
             <p class="digimon-name">{{ digimon.name }}</p>
         </a>
->>>>>>> 3cb05c081cf0c865418560a0d4a7dd1b2be5687b
         {% endfor %}
     </div>
 </body>

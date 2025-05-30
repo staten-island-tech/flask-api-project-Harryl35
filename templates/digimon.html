@@ -2,36 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-<<<<<<< HEAD
-    <title>{{ digimon.name }} - Digimon Details</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        h1 {
-            color: #333;
-        }
-        img {
-            width: 200px;
-            height: 200px;
-        }
-        p {
-            font-size: 18px;
-            color: #555;
-        }
-    </style>
-</head>
-<body>
-    <h1>{{ digimon.name }}</h1>
-    <img src="{{ digimon.img }}" alt="{{ digimon.name }}">
-    <p><strong>Level:</strong> {{ digimon.level }}</p>
-    <p><strong>Description:</strong> {{ digimon.name }} is a Digimon of level {{ digimon.level }}.</p>
-    <a href="{{ url_for('index') }}">Back to Gallery</a>
-=======
     <title>{{ digimon.name }} Details</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
@@ -44,6 +14,5 @@
         <h1>Digimon Not Found</h1>
     {% endif %}
     <a href="/">Back to Digimon List</a>
->>>>>>> 3cb05c081cf0c865418560a0d4a7dd1b2be5687b
 </body>
 </html>
