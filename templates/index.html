@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+<<<<<<< HEAD
     <title>Digimon Gallery</title>
     <style>
         body {
@@ -56,6 +57,22 @@
                     <p>{{ digimon.name }}</p>
                 </a>
             </div>
+=======
+    <title>Digimon List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Digimon List</h1>
+    </header>
+
+    <div class="grid-container">
+        {% for digimon in digimon_list %}
+        <a href="/digimon/{{ digimon.name }}" class="card">
+            <img src="{{ digimon.img }}" alt="{{ digimon.name }}">
+            <p class="digimon-name">{{ digimon.name }}</p>
+        </a>
+>>>>>>> 3cb05c081cf0c865418560a0d4a7dd1b2be5687b
         {% endfor %}
     </div>
 </body>

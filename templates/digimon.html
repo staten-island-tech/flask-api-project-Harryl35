@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+<<<<<<< HEAD
     <title>{{ digimon.name }} - Digimon Details</title>
     <style>
         body {
@@ -30,5 +31,19 @@
     <p><strong>Level:</strong> {{ digimon.level }}</p>
     <p><strong>Description:</strong> {{ digimon.name }} is a Digimon of level {{ digimon.level }}.</p>
     <a href="{{ url_for('index') }}">Back to Gallery</a>
+=======
+    <title>{{ digimon.name }} Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    {% if digimon %}
+        <h1>{{ digimon.name }}</h1>
+        <img src="{{ digimon.img }}" alt="{{ digimon.name }}">
+        <p><strong>Level:</strong> {{ digimon.level }}</p>
+    {% else %}
+        <h1>Digimon Not Found</h1>
+    {% endif %}
+    <a href="/">Back to Digimon List</a>
+>>>>>>> 3cb05c081cf0c865418560a0d4a7dd1b2be5687b
 </body>
 </html>
