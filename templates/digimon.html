@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ digimon.name }} Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    {% if digimon %}
+        <h1>{{ digimon.name }}</h1>
+        <img src="{{ digimon.img }}" alt="{{ digimon.name }}">
+        <p><strong>Level:</strong> {{ digimon.level }}</p>
+    {% else %}
+        <h1>Digimon Not Found</h1>
+    {% endif %}
+    <a href="/">Back to Digimon List</a>
+</body>
+</html>
